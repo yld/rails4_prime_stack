@@ -1,0 +1,13 @@
+%head{lang: #{I18n.locale}}
+  %meta{charset: 'utf-8'}
+  %meta{'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1'}
+  - if content_for?( :description )
+    %meta{name: 'description', content: content_for( :description )}
+  %meta{name: 'viewport', content: 'width=device-width'}
+  %title
+    = yield :title
+    = "#{ controller.controller_name.titleize } - #{ controller.action_name.titleize } h2ts3" unless content_for?( :title )
+  = render 'stylesheets'
+  = yield :head_javascript
+  = csrf_meta_tags
+

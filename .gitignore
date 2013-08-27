@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+*.swp
+coverage
+gems.tags
+tags
+.zeus.sock
+h2ts.rb

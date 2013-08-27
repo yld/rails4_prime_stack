@@ -8,6 +8,12 @@ Bundler.require(:default, Rails.env)
 
 module H2ts3
   class Application < Rails::Application
+
+    console do
+      require 'pry'
+      config.console = Pry
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -18,6 +24,26 @@ module H2ts3
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.default_locale = :fr
+    config.i18n.default_locale = 'fr'
+    config.i18n.available_locales = :fr
+
+    config.generators do |g|
+      g.orm             :active_record
+      g.template_engine :haml
+      g.test_framework  :rspec, fixture: true
+      g.stylesheets     false
+      g.stylesheet_engine :sass
+      g.javascripts :false
+      g.fixture_replacement :factory_girl, dir: 'factories'
+      g.factory_girl dir: 'factories'
+    end
+
+      config.sass.preferred_syntax = :sass
+
+      config.active_record.default_timezone :local
+
+      config.cache_store = :redis_store
+
   end
 end
+
