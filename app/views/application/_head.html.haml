@@ -6,7 +6,7 @@
   %meta{name: 'viewport', content: 'width=device-width'}
   %title
     = yield :title
-    = "#{ controller.controller_name.titleize } - #{ controller.action_name.titleize } h2ts3" unless content_for?( :title )
+    = "#{ controller.controller_name.titleize } - #{ controller.action_name.titleize } rails4_prime_stack" unless content_for?( :title )
   = render 'stylesheets'
   = yield :head_javascript
   = csrf_meta_tags

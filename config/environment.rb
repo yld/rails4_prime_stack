@@ -2,4 +2,4 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the Rails application.
-H2ts3::Application.initialize!
+Rails4PrimeStack::Application.initialize!

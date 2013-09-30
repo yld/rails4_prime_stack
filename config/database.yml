@@ -17,10 +17,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: h2ts3_development
+  database: rails4_prime_stack_development
   pool: 5
-  username: h2ts3_development
-  password: h2ts3_development
+  username: rails4_prime_stack_development
+  password: rails4_prime_stack_development
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -46,18 +46,18 @@ development:
 test: &test
   adapter: postgresql
   encoding: unicode
-  database: h2ts3_test
+  database: rails4_prime_stack_test
   pool: 5
-  username: h2ts3_test
-  password: h2ts3_test
+  username: rails4_prime_stack_test
+  password: rails4_prime_stack_test
   host: localhost
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: h2ts3_production
+  database: rails4_prime_stack_production
   pool: 5
-  username: h2ts3
+  username: rails4_prime_stack
   password:
 
 cucumber:

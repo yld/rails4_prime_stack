@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-module H2ts3
+module Rails4PrimeStack
   class Application < Rails::Application
 
     console do
