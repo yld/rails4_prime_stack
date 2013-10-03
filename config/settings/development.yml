@@ -1,0 +1,26 @@
+redis_session:
+  host: localhost
+  port: 6379
+  db: 1
+  namespace: session
+  password: password
+  expire_in: 90.minutes
+redis_rails_cache:
+  host: localhost
+  port: 6379
+  db: 2
+  namespace: rails_cache
+redis_i18n:
+  host: localhost
+  port: 6379
+  db: 3
+  namespace: i18n
+redis_sidekiq:
+  host: localhost
+  port: 6379
+  db: 4
+  namespace: sidekiq
+redis_rake_cache:
+  host: localhost
+  port: 6379
+  db: 5

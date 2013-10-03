@@ -103,6 +103,7 @@ gem 'paper_trail', '>= 3.0.0.beta1'
 
 ### process runnning
 gem 'sidekiq'
+gem 'sidekiq-cron'
 ### end process runnning
 
 ### inherited_resources
@@ -115,7 +116,7 @@ gem 'inherited_resources'
 
 group :development, :test do
   gem 'bullet'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', require: false
 end
 
 group :development do
@@ -128,7 +129,7 @@ group :development do
   ### end dependancies incompatibily with something
   #
   gem 'brakeman', require: false
-  gem 'zeus', require: false
+  #gem 'zeus', require: false
   ### end tools
 
   ### errors handling
@@ -218,6 +219,8 @@ end
 ### authentication
 gem 'devise', '3.1.0'
 gem 'devise-i18n'
+gem 'devise-async'
+#
 ### end authentication
 
 # authorization

@@ -8,6 +8,8 @@
     = yield :title
     = "#{ controller.controller_name.titleize } - #{ controller.action_name.titleize } rails4_prime_stack" unless content_for?( :title )
   = render 'stylesheets'
+  /[if lt IE 8]
+      = stylesheet_link_tag 'font-awesome-ie7.min.css', media: 'all'
   = yield :head_javascript
   = csrf_meta_tags
 

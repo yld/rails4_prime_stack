@@ -53,6 +53,7 @@ Rails4PrimeStack::Application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
+  config.cache_store = :redis_store, Settings.redis_cache
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
@@ -79,7 +80,8 @@ Rails4PrimeStack::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.action_dispatch.rack_cache = {
-    metastore:   'redis://localhost:6379/1/metastore',
-    entitystore: 'redis://localhost:6379/1/entitystore'
+    metastore:   "redis://#{Settings.redis_rack_cache.host}:#{Settings.redis_rack_cache.port}/#{Settings.redis_rack_cache.db}/metastore",
+    entitystore: "redis://#{Settings.redis_rack_cache.host}:#{Settings.redis_rack_cache.port}/#{Settings.redis_rack_cache.db}/entitystore"
   }
+
 end
