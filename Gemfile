@@ -51,6 +51,11 @@ gem 'pg_search'
 #gem 'pg_power'
 ### end postgresql support
 
+## database
+gem 'foreigner'
+gem 'immigrant'
+### database
+
 ### UI
 gem 'kaminari'
 gem 'd3-rails'
