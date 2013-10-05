@@ -115,17 +115,17 @@ gem install zeus
 
 ## General usage
 
-Run zeus
+1. Run zeus
 ```Shell
 zeus start
 ```
-Run guard (in another terminal):
+2. Run guard (in another terminal):
 ```Shell
 bundle exec guard
 ```
-Code (in another terminal), see below for guidance.
+3. Code (in another terminal), see below for guidance.
 
-Rebase on master branch for eventual upgrade.
+4. Rebase on master branch for eventual upgrade.
 ```Shell
 git rebase master
 ```
