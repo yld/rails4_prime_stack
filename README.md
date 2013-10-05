@@ -109,16 +109,16 @@ Required extensions:
 
 ## General usage
 
-2. Run zeus
-          zeus start
+Run zeus
+    zeus start
 
-3. Run guard (in another terminal):
-        bundle exec guard
+Run guard (in another terminal):
+     bundle exec guard
 
-4. Code (in another terminal):
+Code (in another terminal), see below for guidance.
 
-5. Rebase on master branch for eventual upgrade.
-        git rebase master
+Rebase on master branch for eventual upgrade.
+     git rebase master
 
 Please pay attention to stay compatible with master branch (ie. put your code between '### application code here' marks when present)
 
