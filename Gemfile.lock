@@ -507,6 +507,10 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
+    rspec-cells (0.1.7)
+      cells (~> 3.4)
+      railties (>= 3.0, < 4.1)
+      rspec-rails (~> 2.2)
     rspec-console (0.2.4)
       rails-env-switcher
     rspec-core (2.14.5)
@@ -707,6 +711,7 @@ DEPENDENCIES
   redis-rails
   redis-store
   responders
+  rspec-cells
   rspec-console
   rspec-rails (>= 2.14.0)
   sass-rails (~> 4.0.0)

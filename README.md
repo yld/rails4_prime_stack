@@ -35,21 +35,20 @@ Having a strong reliable stack for fast application bootstrapping, with the foll
 * i18n tools
 * sidekiq
 * haml & sass
-* cells
+* [cells](https://github.com/apotonick/cells) with [](https://github.com/apotonick/rspec-cells)
 * ransack for advanced search
-* rails_config for managing your settings per environment
+* [rails_config](https://github.com/railsjedi/rails_config) for managing your settings per environment
 
 ### Development tools
 
-* zeus with custom plan (sidekiq)
-* i18n-tasks
-* [pry](https://github.com/pry/pry) with a lot of plugins
-* better_errors
-* brakeman
-* [rubocop](https://github.com/bbatsov/rubocop)
-* i18n-tasks
-* rcov (simplecov)
-* bullet
+* [zeus](https://github.com/burke/zeus) with custom plan (sidekiq)
+* [i18n-tasks](https://github.com/glebm/i18n-tasks)
+* [pry](https://github.com/pry/pry) with a lot of plugins, bundled in guard
+* [better_errors](https://github.com/charliesome/better_errors)
+* [brakeman](https://github.com/presidentbeef/brakeman) (a static analysis security vulnerability scanner for Ruby on Rails applications) bundled in guard
+* [rubocop](https://github.com/bbatsov/rubocop) bundled in guard
+* rcov ([simplecov](https://github.com/colszowka/simplecov))
+* [bullet](https://github.com/flyerhzm/bullet) to reduce he nuber of your queries and increase application performances
 
 ### Deployment tools
 
@@ -66,35 +65,37 @@ Having a strong reliable stack for fast application bootstrapping, with the foll
 
 ## Install
 
-- Clone repository
+1. Clone repository
     git clone ...
 
-- Make your own branch:
+2. Make your own branch:
     git co master -b your_application_name
 
-- Code
+3. Code
 
 ## Usage
 
-- Install required gems
+1. Install required gems
     gem install bundler
     bundle install
     gem install zeus
 
-- Run zeus
+2. Run zeus
     zeus starts
 
-- Run guard (in another terminal):
+3. Run guard (in another terminal):
     bundle exec guard
 
-- Code (in another terminal)
+4. Code (in another terminal):
 
-- Rebase on master branch for eventual upgrade.
+5. Rebase on master branch for eventual upgrade.
     git rebase master
 
-Please pay attention to stay compatible with master branch (ie. put your code between '### application code here' marks)
+Please pay attention to stay compatible with master branch (ie. put your code between '### application code here' marks when present)
 
 ### Master upgrade
+
+To be completed
 
 [bundle-auto-update](https://github.com/versapay/bundler-auto-update) run it against your code or the master branch
 
@@ -117,7 +118,7 @@ Required extensions:
 * array
 * probably full text search
 
-
+### REDIS server
 2.4.x or 2.6.x 'll do the trick'
 
 ## TODO
