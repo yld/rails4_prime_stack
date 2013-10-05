@@ -96,30 +96,39 @@ Required extensions:
 ## Install
 
 1. Clone repository
-    git clone ...
+```Shell
+git clone ...
+```
 2. Make your own branch:
-        git co master -b your_application_name
+```Shell
+git co master -b your_application_name
+```
 3. Code
 4. Install required gems
-        gem install bundler
-        bundle install
-        gem install zeus
+```Shell
+gem install bundler
+bundle install
+gem install zeus
+```
 5. Install additionnal tools
     * livereload in your browser
 
 ## General usage
 
 Run zeus
-```Shell`
+```Shell
 zeus start
 ```
 Run guard (in another terminal):
-     bundle exec guard
-
+```Shell
+bundle exec guard
+```
 Code (in another terminal), see below for guidance.
 
 Rebase on master branch for eventual upgrade.
-     git rebase master
+```Shell
+git rebase master
+```
 
 Please pay attention to stay compatible with master branch (ie. put your code between '### application code here' marks when present)
 
@@ -164,9 +173,13 @@ A few gems are already (partially) setup, if you wish to remove them, here are t
 * install and setup (see devise wiki)
 * views
   generate localized views if your application is internationalized
-          zeus g g devise:views:locale it
+```Shell
+zeus g g devise:views:locale it
+```
   and maybe (before):
-          zeus g devise:views:i18n_templates
+```Shell
+zeus g devise:views:i18n_templates
+```
 
 ## TODO
 
