@@ -2,7 +2,7 @@
 
 This is a Rails 4 base application for quick and easyly bootstrapping an application with up to date comptaibles gems and easy upgrade using the improvents of a common trunk.
 
-It does not rely on thr/Rails template but on git branching/rebasing for rails stack upgrade.
+It does not rely on the Rails templates but on git branching/rebasing for rails stack upgrade.
 
 ## Objectives
 
@@ -104,7 +104,7 @@ Required extensions:
 2. Make your own branch:
 
   ```Shell
-  git co master -b your_application_name
+  git checkout master -b your_application_name
   ```
 3. Code
 4. Install required gems
@@ -115,7 +115,7 @@ Required extensions:
   ```
 
 5. Install additionnal tools
-    * livereload in your browser
+    * [livereload](http://livereload.com/) in your browser
 
 ## General usage
 
@@ -123,10 +123,12 @@ Required extensions:
 ```Shell
 zeus start
 ```
+
 2. Run guard (in another terminal):
-```Shell
-bundle exec guard
-```
+  ```Shell
+  bundle exec guard
+  ```
+
 3. Code (in another terminal), see below for guidance.
 
 4. Rebase on master branch for eventual upgrade.
