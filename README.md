@@ -14,7 +14,7 @@ Having a strong reliable stack for fast application bootstrapping, with the foll
 * full cucumber
 * drb/jobs processor (sidekiq)
 * clean and easy UI design
-* html 5 only compliant (no IE>=8 support guaranted)
+* html 5 only compliant (no IE>=8 support granted)
 * responsive/adaptative design facilities via [bootstrap 3](http://getbootstrap.com/)
 * lots of productivity and qulity tools (speed enghancement, error reporting, code scanner, etc.)
 
@@ -29,6 +29,7 @@ Required extensions:
 * hstore
 * array
 * probably full text search
+
 ### REDIS server
 2.4.x or 2.6.x 'll do the trick'
 
@@ -46,8 +47,8 @@ Required extensions:
 ### UI
 * [bootstrap 3](http://getbootstrap.com/) everywhere (with customizable CSS)
 * [simpleform](https://github.com/plataformatec/simple_form) (with [carmen](https://github.com/jim/carmen-rails) as country selector)
-* [simple-navigation](https://github.com/andi/simple-navigation) (with [bootstrap nav generator](https://github.com/pdf/simple-navigation-bootstrap))
-* [kaminari](https://github.com/amatsuda/kaminari‎) for pagination
+* [simple-navigation](https://github.com/andi/simple-navigation) (with [bootstrap nav generator](https://github.com/pdf/simple-navigation-bootstrap)) for easy (sub)menu and navigation.
+* [kaminari](https://github.com/amatsuda/kaminari) for pagination
 * showfor
 * [inherited_resources](https://github.com/josevalim/inherited_resources)
 * default layout(s) for fast views initialization
@@ -55,11 +56,10 @@ Required extensions:
 
 ### Javscript
 * [d3](http://d3js.org/) (with [d3_rails](https://github.com/logical42/d3_rails)) for data driven document and pretty SVG graphing
-$ [jquery-turbolinks](https://github.com/kossnocorp/jquery.turbolinks) already setup
+* [jquery-turbolinks](https://github.com/kossnocorp/jquery.turbolinks) already setup
 
 ### UI & tools
 * [devise](https://github.com/plataformatec/devise)
-* i18n tools
 * sidekiq
 * haml & sass
 * [cells](https://github.com/apotonick/cells) with [](https://github.com/apotonick/rspec-cells)
@@ -68,7 +68,7 @@ $ [jquery-turbolinks](https://github.com/kossnocorp/jquery.turbolinks) already s
 
 ### i18n
 * [i18n_generators](https://github.com/amatsuda/i18n_generators) to import desired locales from https://github.com/svenfuchs/rails-i18n
-* [i18n-tasks](https://github.com/glebm/i18n-tasks)
+* [i18n-tasks](https://github.com/glebm/i18n-tasks) to check your locales parity
 * [translations for devise](https://github.com/tigrish/devise-i18n) and [localized views generators](https://github.com/mcasimir/devise-i18n-views)
 
 ### Development tools
@@ -98,26 +98,27 @@ $ [jquery-turbolinks](https://github.com/kossnocorp/jquery.turbolinks) already s
 1. Clone repository
     git clone ...
 2. Make your own branch:
-    git co master -b your_application_name
+        git co master -b your_application_name
 3. Code
+4. Install required gems
+        gem install bundler
+        bundle install
+        gem install zeus
+5. Install additionnal tools
+    * livereload in your browser
 
 ## General usage
 
-1. Install required gems
-    gem install bundler
-    bundle install
-    gem install zeus
-
 2. Run zeus
-    zeus start
+        zeus start
 
 3. Run guard (in another terminal):
-    bundle exec guard
+        bundle exec guard
 
 4. Code (in another terminal):
 
 5. Rebase on master branch for eventual upgrade.
-    git rebase master
+        git rebase master
 
 Please pay attention to stay compatible with master branch (ie. put your code between '### application code here' marks when present)
 
@@ -152,17 +153,19 @@ A few gems are already (partially) setup, if you wish to remove them, here are t
 * i18n: edit application.rb
 
 ### Setup
+
 #### i18n
 1. edit application.rb
 2. use
+
 ####Devise
 * install your required plugins
 * install and setup (see devise wiki)
 * views
   generate localized views if your application is internationalized
-      zeus g g devise:views:locale it
+          zeus g g devise:views:locale it
   and maybe (before):
-      zeus g devise:views:i18n_templates
+          zeus g devise:views:i18n_templates
 
 ## TODO
 
