@@ -135,16 +135,12 @@ bundle exec guard
 ```Shell
 git rebase master
 ```
-Note that might want to use tools like tmuxinator to run all of this process in one tmux sesionwith a configuration like this (for development environment):
-```YAML
-# ~/.tmuxinator/rails4_prime_stack.yml
 
+Note that might want to use tools like [tmuxinator](https://github.com/aziz/tmuxinator) to run all of this process in one tmux sesion with a configuration like this one (for development environment), assuming you've checkout this repository on ~/:
+```YAML
 name: rails4_prime_stack
 root: ~/rails4_prime_stack
-
-# you coulid remove the line below if you don't need unicode nor 256 colors
 tmux_options:  -2 -u
-
 windows:
   - zeus: zeus start
   - guard: sleep 30 && bundle exec guard
@@ -160,7 +156,7 @@ Please pay attention to stay compatible with master branch (ie. put your code be
 
 To be completed (waiting for simple blog application in parallel branch).
 
-The process is:
+The process is as follow:
 1. add the gem to master (and some basic setup if necesary)
 2. rebase with an application using the full gem stack
 3. test using rpec/cucumber and various code metrics (reek, rubocop...) and/or use guard
@@ -169,9 +165,9 @@ The process is:
 
 For simple gem upgrade [bundle-auto-update](https://github.com/versapay/bundler-auto-update) might be usefull: run it against your code or the master branch.
 
-Most of the gems (exepted those needed by RAILS) are not sticked to a precise version in that perspective.
+Most of the gems (except those needed by RAILS) are not sticked to a precise version in that perspective.
 
-## Components setup
+## Components (gems) setup
 You may wish to remove some component to decrease your applicaton overhead: just do it in your Gemfile.
 
 ### Removal
@@ -200,6 +196,7 @@ A few gems are already (partially) setup, if you wish to remove them, here are t
 ```Shell
 zeus g g devise:views:locale it
 ```
+
   and maybe (before):
 ```Shell
 zeus g devise:views:i18n_templates
