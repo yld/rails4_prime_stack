@@ -38,11 +38,21 @@ module Rails4PrimeStack
       g.factory_girl dir: 'factories'
     end
 
-      config.sass.preferred_syntax = :sass
+    config.sass.preferred_syntax = :sass
 
-      config.active_record.default_timezone :local
+    config.active_record.default_timezone :local
 
-      config.cache_store = :redis_store
+    config.cache_store = :redis_store
+
+    ### middlewares
+    config.after_initialize do
+      #config.middleware.use ExceptionNotification::Rack,
+      #  email: Settings.exception_notification.to_hash,
+      #  ignore_if: [ :test ].include?(Rails.env)
+      # moved to initializer
+      # config.middleware.use ExceptionNotification::Rack, email: Settings.exception_notification.to_hash
+    end
+    ### end middlewares
 
   end
 end

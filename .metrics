@@ -1,0 +1,5 @@
+MetricFu::Configuration.run do |config|
+  config.configure_metric(:flay) do |flay|
+    flay.enabled = false
+  end
+end

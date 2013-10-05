@@ -60,7 +60,7 @@ gem 'immigrant'
 gem 'kaminari'
 gem 'd3-rails'
 gem 'jquery-turbolinks'
-
+gem 'show_for'
 ### search
 gem 'ransack'
 ### end search
@@ -212,6 +212,8 @@ group :test do
 
   gem 'rspec-rails', '>= 2.14.0'
   gem 'email_spec', '>= 1.2.1'
+  gem 'rspec-cells'
+
   gem 'cucumber-rails', '>= 1.4.0', require: false
   gem 'multi_test'
   gem 'database_cleaner', '>= 0.8.0'

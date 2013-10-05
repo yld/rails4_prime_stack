@@ -1,0 +1,7 @@
+exception_notification:
+  email_prefix: <%= "[rails4_prime_stack - #{Rails.env}]" %>
+  sender_address: '"Notifier" <notifier@example.com>'
+  exception_recipients:
+    - "exceptions@rails4_prime_stack.com"
+  verbose_subject: true
+  normalize_subject: true
