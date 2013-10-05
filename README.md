@@ -96,10 +96,13 @@ Required extensions:
 ## Install
 
 1. Clone repository
+
   ```Shell
   git clone ...
   ```
+
 2. Make your own branch:
+
   ```Shell
   git co master -b your_application_name
   ```
@@ -110,6 +113,7 @@ Required extensions:
   bundle install
   gem install zeus
   ```
+
 5. Install additionnal tools
     * livereload in your browser
 
