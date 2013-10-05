@@ -1,10 +1,10 @@
-h1. Prime stack template application
+# Prime stack template application
 
 This is a Rails 4 base application for quick and easy bootstrapping with up to date comptaibles gems.
 
 It does not rely on thr/Rails template but on git branching/rebasing
 
-h2. Objectives
+## Objectives
 
 Having a strong reliable stack for fast application bootstrapping, with the following features:
 
@@ -18,17 +18,9 @@ Having a strong reliable stack for fast application bootstrapping, with the foll
 * responsive/adaptative design facilities
 * lots of productivity and qulity tools (speed enghancement, error reporting, code scanner, etc.)
 
-h2. Components list
+## Components list
 
-h3. Testing
-
-* rspec
-* cucumber
-* guard (with all usefull plugins availables)
-* lot of metrics tools (those bundled with metric-fu, brakeman...)
-* factory_girl and factories
-
-h3. UI
+### UI
 
 * bootstrap everywhere (with customizable CSS)
 * simpleform (with carmen as country selector), showfor and inherited_resources
@@ -36,7 +28,7 @@ h3. UI
 * HTML 5 ony (odernizer bundled)
 * simple-navigation (with bootstrap nav generator)
 
-h3. UI & tools
+### UI & tools
 
 * devise
 * d3 (with d3_rails)
@@ -47,7 +39,7 @@ h3. UI & tools
 * ransack for advanced search
 * rails_config for managing your settings per environment
 
-h3. Development tools
+### Development tools
 
 * zeus with custom plan (sidekiq)
 * i18n-tasks
@@ -59,67 +51,64 @@ h3. Development tools
 * rcov (simplecov)
 * bullet
 
-h3. Deployment tools
+### Deployment tools
 
 * capistano
 * capistano-rvm
 
-h2. Install
+### Testing
 
-Clone repository
-<pre>
-git clone ...
-</pre>
+* rspec
+* cucumber
+* guard (with all usefull plugins availables)
+* lot of metrics tools (those bundled with metric-fu, brakeman...)
+* factory_girl and factories
 
-Make your own branch:
-<pre>
-git co master -b your_application_name
-</pre>
+## Install
 
-h2. Usage
+- Clone repository
+    git clone ...
 
-# Install required gems
-<pre>
-gem install bundler
-bundle install
-gem install zeus
-</pre>
+- Make your own branch:
+    git co master -b your_application_name
 
-# Run zeus
-<pre>
-zeus starts
-</pre>
+- Code
 
-# Run guard (in another terminal)
-<pre>
-bundle exec guard
-</pre>
+## Usage
 
-# Code (in another terminal)
+- Install required gems
+    gem install bundler
+    bundle install
+    gem install zeus
 
-# Rebase on master branch for eventual upgrade.
-<pre>
-# in your branch
-git rebase master
-</pre>
+- Run zeus
+    zeus starts
+
+- Run guard (in another terminal):
+    bundle exec guard
+
+- Code (in another terminal)
+
+- Rebase on master branch for eventual upgrade.
+    git rebase master
 
 Please pay attention to stay compatible with master branch (ie. put your code between '### application code here' marks)
 
-h3. Master upgrade
+### Master upgrade
 
 [bundle-auto-update](https://github.com/versapay/bundler-auto-update) run it against your code or the master branch
 
-h2. Requirements
+## Requirements
 
-h3. RVM
+### RVM
 
 Or any compatible Ruby version manager
 
-h3. Ruby 2.x
+### Ruby 2.x
 
 As specified in .ruby-version
 
-h3. Postresql server
+### Postresql server
 
 Tested with 9.2 version.
 
@@ -131,7 +120,7 @@ Required extensions:
 
 2.4.x or 2.6.x 'll do the trick'
 
-h2. TODO
+## TODO
 
 * add compass for CSS sprites
 * simple blog test application on separate branch using each bundled feature
