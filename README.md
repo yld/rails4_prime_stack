@@ -110,7 +110,7 @@ Required extensions:
 ## General usage
 
 2. Run zeus
-        zeus start
+          zeus start
 
 3. Run guard (in another terminal):
         bundle exec guard
