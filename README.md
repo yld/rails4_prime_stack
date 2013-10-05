@@ -97,9 +97,9 @@ Required extensions:
 
 1. Clone repository
 
-  ```Shell
-  git clone ...
-  ```
+```Shell
+git clone ...
+```
 
 2. Make your own branch:
 
@@ -108,10 +108,10 @@ Required extensions:
   ```
 3. Code
 4. Install required gems
-  ```Shell
-  gem install bundler
-  bundle install
-  gem install zeus
+```Shell
+gem install bundler
+bundle install
+gem install zeus
   ```
 
 5. Install additionnal tools
@@ -125,17 +125,35 @@ zeus start
 ```
 
 2. Run guard (in another terminal):
-  ```Shell
-  bundle exec guard
-  ```
+```Shell
+bundle exec guard
+```
 
-3. Code (in another terminal), see below for guidance.
+3. Code (in another terminal), see [below](#Code) for guidance.
 
 4. Rebase on master branch for eventual upgrade.
 ```Shell
 git rebase master
 ```
+Note that might want to use tools like tmuxinator to run all of this process in one tmux sesionwith a configuration like this (for development environment):
+```YAML
+# ~/.tmuxinator/rails4_prime_stack.yml
 
+name: rails4_prime_stack
+root: ~/rails4_prime_stack
+
+# you coulid remove the line below if you don't need unicode nor 256 colors
+tmux_options:  -2 -u
+
+windows:
+  - zeus: zeus start
+  - guard: sleep 30 && bundle exec guard
+  - server: sleep 30 && zeus s
+  - console: sleep 30 && zeus c
+  - logs: tail -f log/development.log
+```
+
+## Code
 Please pay attention to stay compatible with master branch (ie. put your code between '### application code here' marks when present)
 
 ## Master edit and upgrade
