@@ -1,6 +1,8 @@
 AllCops:
   Excludes:
     - db/schema.rb
+    - features/step_definitions/email_steps.rb
+    - config/initializers/i18n-tasks.rb
 Documentation:
   Enabled: false
 

@@ -16,7 +16,7 @@ FactoryGirl.find_definitions unless zeus_running?
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
-if !zeus_running?
+unless zeus_running?
   Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 end
 

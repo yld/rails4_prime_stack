@@ -1,6 +1,17 @@
 %header{id: 'header'}
-  %nav
-    = render_navigation expand_all: true, :renderer: :bootstrap
+  %nav{class: 'navbar-wrapper navbar-default navbar-fixed-top', role: 'navigation'}
+    .container
+      .navbar-header
+        %button.navbar-toggle{:'data-toggle' => 'collapse', :'data-target' => '.navbar-ex1-collapse'}
+          %span.sr-only
+            Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{href: '#'}
+          rails4_prime_stack
+      %div{class: 'collapse navbar-collapse navbar-ex1-collapse'}
+        = render_navigation expand_all: true, renderer: :bootstrap
   %h1 rails4_prime_stack
   = yield :header_content
 

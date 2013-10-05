@@ -65,7 +65,7 @@ guard 'ctags-bundler', src_path: ["app", "lib", "spec/support"] do
   watch('Gemfile.lock')
 end
 
-guard 'cucumber', command_prefix: 'zeus 'do
+guard 'cucumber', command_prefix: 'zeus ', :bundler => false do
   watch(%r{^features/.+\.feature$})
   watch(%r{^features/support/.+$})          { 'features' }
   watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }

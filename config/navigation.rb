@@ -30,9 +30,9 @@ SimpleNavigation::Configuration.run do |navigation|
   # This turns it off globally (for the whole plugin)
   # navigation.auto_highlight = false
 
-  # Define the primary navigation
-  navigation.items do |primary|
-    # Add an item to the primary navigation. The following params apply:
+  # Define the top_nav navigation
+  navigation.items do |top_nav|
+    # Add an item to the top_nav navigation. The following params apply:
     # key - a symbol which uniquely defines your navigation item in the scope of the primary_navigation
     # name - will be displayed in the rendered navigation. This can also be a call to your I18n-framework.
     # url - the address that the generated item links to. You can also use url_helpers (named routes, restful routes helper, url_for etc.)
@@ -47,29 +47,29 @@ SimpleNavigation::Configuration.run do |navigation|
     #           :method - Specifies the http-method for the generated link - default is :get.
     #           :highlights_on - if autohighlighting is turned off and/or you want to explicitly specify
     #                            when the item should be highlighted, you can set a regexp which is matched
-    #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
+    #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>.
     #
-    primary.item :key_1, 'name', url, options
+    top_nav.item :key_1, 'name', home_index_url, {}
 
     # Add an item which has a sub navigation (same params, but with block)
-    primary.item :key_2, 'name', url, options do |sub_nav|
+    top_nav.item :key_2, 'name', home_index_url, {} do |sub_nav|
       # Add an item to the sub navigation (same params again)
-      sub_nav.item :key_2_1, 'name', url, options
+      sub_nav.item :key_2_1, 'name', home_index_url, {}
     end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
     # thus you can use all the methods and vars you have available in the views.
-    primary.item :key_3, 'Admin', url, :class => 'special', :if => Proc.new { current_user.admin? }
-    primary.item :key_4, 'Account', url, :unless => Proc.new { logged_in? }
+    top_nav.item :key_3, 'Admin', home_index_url, :class => 'special'#, :if => Proc.new { current_user.admin? }
+    top_nav.item :key_4, 'Account', home_index_url #, :unless => Proc.new { logged_in? }
 
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
-    # primary.dom_id = 'menu-id'
-    # primary.dom_class = 'menu-class'
+    # top_nav.dom_id = 'menu-id'
+    top_nav.dom_class = 'nav navbar-nav'
 
     # You can turn off auto highlighting for a specific level
-    # primary.auto_highlight = false
+    # top_nav.auto_highlight = false
 
   end
 

@@ -59,6 +59,7 @@ gem 'immigrant'
 ### UI
 gem 'kaminari'
 gem 'd3-rails'
+gem 'jquery-turbolinks'
 
 ### search
 gem 'ransack'
@@ -88,6 +89,7 @@ gem 'client_side_validations-simple_form', git: 'git://github.com/saveritemedica
 
 gem 'rails-i18n'
 ### end forms and i18n
+
 
 ### end UI
 
