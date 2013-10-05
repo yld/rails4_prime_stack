@@ -1,10 +1,9 @@
 require 'zeus/rails'
+require 'sidekiq/cli'
 
 class CustomPlan < Zeus::Rails
 
   def sidekiq
-    require 'sidekiq/cli'
-
     begin
       cli = Sidekiq::CLI.instance
       cli.parse

@@ -46,4 +46,3 @@ module Rails4PrimeStack
 
   end
 end
-

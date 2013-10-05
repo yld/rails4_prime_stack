@@ -45,7 +45,7 @@ group :metrics do
     watch('config/jslint.yml')
   end
 
-  guard :rubocop do
+  guard :rubocop, cli: [ '--rails' ] do
     watch(%r{.+\.rb$})
     watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
   end
