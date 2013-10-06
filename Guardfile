@@ -86,7 +86,7 @@ guard 'migrate' do
 end
 
 
-guard 'rails' do
+guard 'rails', zeus: true do
   watch('Gemfile.lock')
   watch(%r{^(config|lib)/.*})
 end
