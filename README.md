@@ -1,8 +1,8 @@
 # Prime stack template application
 
-This is a Rails 4 base application for quick and easyly bootstrapping an application with up to date comptaibles gems and easy upgrade using the improvents of a common trunk.
+This is a Rails 4 [prime stack](http://words.steveklabnik.com/rails-has-two-default-stacks) base application for quick and easyly bootstrapping an application with up to date comptaibles gems and easy upgrade using the improvents of a common trunk.
 
-It does not rely on the Rails templates but on git branching/rebasing for rails stack upgrade.
+It does not rely on the [Rails templates](http://edgeguides.rubyonrails.org/rails_application_templates.html) for new application generation but on git branching/[rebasing](http://git-scm.com/book/en/Git-Branching-Rebasing).
 
 ## Objectives
 
@@ -25,7 +25,7 @@ As specified in .ruby-version
 ### [Postresql](http://www.postgresql.org/) server
 Tested with 9.2 version.
 
-Required extensions:
+Required Postgresql extensions:
 * hstore
 * array
 * probably full text search
@@ -104,26 +104,28 @@ Required extensions:
 ## Install
 
 1. Clone repository
-
-```Shell
-git clone ...
-```
+  ```Shell
+  git clone ...
+  ```
 
 2. Make your own branch:
 
   ```Shell
   git checkout master -b your_application_name
   ```
+
 3. Code
 4. Install required gems
-```Shell
-gem install bundler
-bundle install
-gem install zeus
-  ```
+  ```Shell
+  gem install bundler
+  bundle install
+  gem install zeus
+    ```
 
 5. Install additionnal tools
     * [livereload](http://livereload.com/) in your browser
+    * html2sass if you mind
+    * hash_syntax for 1.8 to 1.9 conversion (and metrics compliance)
 
 ## General usage
 
@@ -137,7 +139,7 @@ zeus start
 bundle exec guard
 ```
 
-3. Code (in another terminal), see [below](#Code) for guidance.
+3. Code (in another terminal), see [below](#code) for guidance.
 
 4. Rebase on master branch for eventual upgrade.
 ```Shell
@@ -220,7 +222,9 @@ For complete removal of several gems, here are the steps to follow:
 
 #### i18n
 Currently only two locales are already installed: fr and en (without country specification):
+
 1. edit application.rb
+
 2. use
 
 ####Devise

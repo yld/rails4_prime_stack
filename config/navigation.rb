@@ -49,7 +49,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>.
     #
-    top_nav.item :key_1, 'name', home_index_url, {}
+    top_nav.item :key_1, 'github source', 'http://github.com/yld/rails4_prime_stack', :icon => [ 'icon-fixed-width', 'icon-github-sign' ]
 
     # Add an item which has a sub navigation (same params, but with block)
     top_nav.item :key_2, 'name', home_index_url, {} do |sub_nav|
@@ -62,6 +62,8 @@ SimpleNavigation::Configuration.run do |navigation|
     # thus you can use all the methods and vars you have available in the views.
     top_nav.item :key_3, 'Admin', home_index_url, class: 'special'#, :if => Proc.new { current_user.admin? }
     top_nav.item :key_4, 'Account', home_index_url #, :unless => Proc.new { logged_in? }
+    top_nav.item :configure, 'configure', home_index_url , :icon => [ 'icon-fixed-width', 'icon-cogs' ]
+    top_nav.item :configure, 'documentation', home_index_url , :icon => [ 'icon-fixed-width', 'icon-book' ]
 
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
