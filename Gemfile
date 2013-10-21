@@ -60,7 +60,7 @@ gem 'immigrant'
 gem 'kaminari'
 gem 'd3-rails'
 gem 'jquery-turbolinks'
-gem 'show_for'
+gem 'show_for', github: 'plataformatec/show_for'
 ### search
 gem 'ransack'
 ### end search
