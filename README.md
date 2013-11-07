@@ -69,8 +69,15 @@ Required Postgresql extensions:
 * [i18n_generators](https://github.com/amatsuda/i18n_generators) to import desired locales from https://github.com/svenfuchs/rails-i18n
 * [i18n-tasks](https://github.com/glebm/i18n-tasks) to check your locales parity
 * [translations for devise](https://github.com/tigrish/devise-i18n) and [localized views generators](https://github.com/mcasimir/devise-i18n-views)
-* you still need to add your own transalation for:
+
+You can install active_record official transaltion with (example for japanese):
+```Shell
+rails g i18n_locale ja
+```
+
+You still need to add your own transalation for:
   * responders
+  * show_for
 
 ### Development tools
 * [zeus](https://github.com/burke/zeus) with custom plan (sidekiq)
