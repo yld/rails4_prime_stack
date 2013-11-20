@@ -221,7 +221,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-rcov-text', require: false
 
-  gem 'forgery'
+  gem 'faker'
 
 end
 
