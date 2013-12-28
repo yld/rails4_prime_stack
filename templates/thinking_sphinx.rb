@@ -8,7 +8,6 @@ end
 
 run 'bundle install'
 
-
 rake('ts:configure')
 
 FileUtils.mkdir 'app/indices'
@@ -45,5 +44,3 @@ Sidekiq::Cron::Job.create( name: 'Thinking Sphinx index rebuild worker - every 5
 end
 
 git commit: "-a -n -m 'added thinking_sphinx'"
-
-

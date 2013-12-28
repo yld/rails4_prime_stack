@@ -8,7 +8,6 @@ Bundler.require(:default, Rails.env)
 
 module Rails4PrimeStack
   class Application < Rails::Application
-
     console do
       require 'pry'
       config.console = Pry
@@ -53,6 +52,5 @@ module Rails4PrimeStack
       # config.middleware.use ExceptionNotification::Rack, email: Settings.exception_notification.to_hash
     end
     ### end middlewares
-
   end
 end

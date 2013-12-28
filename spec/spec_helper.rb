@@ -55,7 +55,7 @@ RSpec.configure do |config|
   # database cleaner
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation, { pre_count: true, reset_ids: true })
+    DatabaseCleaner.clean_with(:truncation,  pre_count: true, reset_ids: true)
   end
 
   config.before(:each) do

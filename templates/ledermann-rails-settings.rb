@@ -5,6 +5,5 @@ gem 'ledermann-rails-settings', :require => 'rails-settings'
 end
 
 generate('rails_settings:migration')
-rake("db:migrate")
+rake('db:migrate')
 git commit: "-a -n -m 'added ledermann-rails-settings'"
-

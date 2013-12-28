@@ -45,7 +45,7 @@ group :metrics do
     watch('config/jslint.yml')
   end
 
-  guard :rubocop, cli: [ '--rails' ] do
+  guard :rubocop, cli: ['-a', '--rails'] do
     watch(%r{.+\.rb$})
     watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
   end
@@ -80,13 +80,13 @@ guard 'livereload' do
   watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html))).*}) { |m| "/assets/#{m[3]}" }
 end
 
-guard 'migrate' do
+guard 'migrate', reset: true do
   watch(%r{^db/migrate/(\d+).+\.rb})
   watch('db/seeds.rb')
 end
 
 
-guard 'rails', zeus: true, force_run: true do
+guard 'rails', CLI: 'zeus server', force_run: true do
   watch('Gemfile.lock')
   watch(%r{^(config|lib)/.*})
 end
@@ -110,7 +110,7 @@ guard 'redis', :executable => '/usr/sbin/redis-server', :pidfile => 'tmp/pids/re
   watch(/^(app|lib|config)\/.*\.rb$/)
 end
 
-guard :rspec, zeus: true, cli: '--color --format nested --fail-fast --drb' do
+guard :rspec, cmd: 'zeus rspec --color --format nested --fail-fast --drb' do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }

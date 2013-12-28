@@ -1,7 +1,13 @@
 source 'https://rubygems.org'
 
+platform :rbx do
+  gem 'rubysl'
+  gem 'racc'
+  gem 'psych'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -28,7 +34,8 @@ gem 'jbuilder', '~> 1.2'
 # gem 'debugger', group: [:development, :test]
 
 # Use unicorn as the app server
-gem 'unicorn'
+gem 'unicorn', platforms: :mri
+gem 'puma', platforms: :rbx
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -79,16 +86,27 @@ gem 'simple-navigation-bootstrap'
 
 ### forms and i18n
 gem 'carmen-rails'
-gem 'simple_form', '3.0.0.rc'
+gem 'simple_form'
 
 gem 'i18n-country-translations'
 
+#gem 'judge'
 gem 'client_side_validations'
 gem 'client_side_validations-turbolinks'
 gem 'client_side_validations-simple_form', git: 'git://github.com/saveritemedical/client_side_validations-simple_form.git'
-
-gem 'rails-i18n'
 ### end forms and i18n
+
+### l1On
+### end l1On
+
+### i18n tools
+gem 'i18n_generators'
+gem 'i18n-tasks'
+gem 'rails-i18n'
+### end i18n tools
+
+### i18n translations
+### end i18n translations
 
 
 ### end UI
@@ -100,6 +118,7 @@ gem 'redis-store'
 ### redis
 
 ### tools
+
 gem 'cells'
 gem 'exception_notification'
 gem 'http_accept_language'
@@ -124,19 +143,27 @@ gem 'inherited_resources'
 group :development, :test do
   gem 'bullet'
   gem 'factory_girl_rails', require: false
+  gem 'commands'
 end
 
 group :development do
+
+  ### spring
+  #gem 'spring', github: 'rails/spring'
+  ##gem 'spring'
+  ##gem "spring", github: "guard/spring", branch: "listen2"
+  #gem "spring-commands-cucumber"
+  #gem "spring-commands-rspec"
+  ### end spring
 
   ### tools
 
   ### dependancies incompatibily with something
   # gem 'html2haml', require: false
-  # gem 'hash_syntax'
+  gem 'hash_syntax'
   ### end dependancies incompatibily with something
   #
   gem 'brakeman', require: false
-  #gem 'zeus', require: false
   ### end tools
 
   ### errors handling
@@ -144,19 +171,21 @@ group :development do
   gem 'binding_of_caller'
   ### end errors handling
 
-  ### i18n
-  gem 'i18n_generators'
-  gem 'i18n-tasks', '~> 0.1.0', require: 'i18n/tasks'
-  ### end i18n
-
   ### console & pry
   gem 'pry'
-  gem 'pry-plus'
+  gem 'pry-doc'
+  gem 'pry-docmore'
+  gem 'pry-stack_explorer'
+  gem 'pry-exception_explorer'
+  gem 'pry-rescue'
+  gem 'bond'
+  gem 'jist'
+  #gem 'pry-debugger', platforms: :mri
+  #gem 'pry-plus'
   gem 'pry-vterm_aliases'
   gem 'rails-env-switcher'
   gem 'rspec-console'
   gem 'cucumber-console'
-  gem 'commands'
   ### end console & pry
 
   ### bundler
@@ -176,7 +205,6 @@ group :development do
   gem 'flay-js'
   gem 'holepicker'
   gem 'consistency_fail'
-  gem 'rack-livereload'
   # gem 'heckle'
   ### end metrics
 
@@ -195,8 +223,9 @@ group :development do
   gem 'guard-coffeescript'
   gem 'guard-brakeman'
   gem 'guard-rails_best_practices'
-  gem 'guard-zeus'
+  #gem 'guard-zeus'
   gem 'guard-livereload'
+  gem 'zeus', require: false
   gem 'rack-livereload'
   #gem 'guard-compass'
   gem 'yajl-ruby'
@@ -215,6 +244,9 @@ group :test do
   gem 'rspec-cells'
 
   gem 'cucumber-rails', '>= 1.4.0', require: false
+  ### capybara drivers
+  ### end capybara drivers
+
   gem 'multi_test'
   gem 'database_cleaner', '>= 0.8.0'
   gem 'launchy', '>= 2.1.2'

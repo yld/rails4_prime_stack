@@ -1,9 +1,8 @@
 require 'zeus/rails'
-require 'sidekiq/cli'
 
 class CustomPlan < Zeus::Rails
-
   def sidekiq
+    require 'sidekiq/cli'
     begin
       cli = Sidekiq::CLI.instance
       cli.parse
@@ -25,7 +24,6 @@ class CustomPlan < Zeus::Rails
     Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
     super
   end
-
 end
 
 Zeus.plan = CustomPlan.new
