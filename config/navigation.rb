@@ -52,18 +52,18 @@ SimpleNavigation::Configuration.run do |navigation|
     top_nav.item :key_1, 'github source', 'http://github.com/yld/rails4_prime_stack', icon: %w(icon-fixed-width icon-github-sign)
 
     # Add an item which has a sub navigation (same params, but with block)
-    top_nav.item :key_2, 'name', home_index_url, {} do |sub_nav|
+    top_nav.item :key_2, 'name', home_index_path, {} do |sub_nav|
       # Add an item to the sub navigation (same params again)
-      sub_nav.item :key_2_1, 'name', home_index_url, {}
+      sub_nav.item :key_2_1, 'name', home_index_path, {}
     end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
     # thus you can use all the methods and vars you have available in the views.
-    top_nav.item :key_3, 'Admin', home_index_url, class: 'special'
-    top_nav.item :key_4, 'Account', home_index_url
-    top_nav.item :configure, 'configure', home_index_url , icon: %w(icon-fixed-width icon-cogs)
-    top_nav.item :configure, 'documentation', home_index_url , icon: %w(icon-fixed-width icon-book)
+    top_nav.item :key_3, 'Admin', home_index_path, class: 'special'
+    top_nav.item :key_4, 'Account', home_index_path
+    top_nav.item :configure, 'configure', home_index_path , icon: %w(icon-fixed-width icon-cogs)
+    top_nav.item :configure, 'documentation', home_index_path , icon: %w(icon-fixed-width icon-book)
 
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
